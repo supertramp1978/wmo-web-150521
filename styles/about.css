@@ -1,0 +1,69 @@
+@charset "UTF-8";
+.prof-wrapper {
+  position: relative;
+}
+
+.prof-wrapper .prof-description {
+  color: #ac7102;
+}
+
+.prof-wrapper .prof-description.career {
+  font-size: x-small;
+  width: 37%;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  top: 45%;
+  left: 27%;
+}
+
+.prof-wrapper .prof-description.job {
+  font-size: 0.1em;
+  width: 90%;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  top: 58%;
+  left: 1%;
+}
+
+.prof-img {
+  display: none;
+}
+
+.prof-img-sm {
+  width: 100%;
+  margin: 0 0 15%;
+}
+
+/*　スマホランドスケープ　画面サイズが420pxから680pxまではここを読み込む　*/
+/*　タブレット　縦　画面サイズが768pxから1024pxまではここを読み込む　*/
+@media screen and (min-width: 1001px) {
+  header {
+    position: fixed;
+    z-index: 20;
+  }
+  .prof-img {
+    display: block;
+    width: 100%;
+    margin: 0 0 10%;
+  }
+  .prof-img-sm {
+    display: none;
+  }
+  .contents-width {
+    width: 85%;
+  }
+  .prof-wrapper .prof-description.career {
+    font-size: medium;
+  }
+  .prof-wrapper .prof-description.job {
+    font-size: medium;
+    top: 68%;
+    left: 3%;
+  }
+  .section-wrapper {
+    padding-bottom: 5%;
+  }
+}
+/*# sourceMappingURL=about.css.map */

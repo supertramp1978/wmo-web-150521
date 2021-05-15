@@ -1,0 +1,123 @@
+// ユーティリティ
+$cGray:rgba(83, 83, 83, 0.8);
+
+.works-wrapper {
+    background-color:rgba(255,255,255, 0.6);
+    height: auto;
+    color:rgba(17, 17, 17, 0.8);
+    text-align: center;
+    
+
+    .section-wrapper {
+        margin: 0 auto;
+
+        
+        h2 {
+            color: $cGray;
+            font-size: 2.5rem;
+            line-height: 0.8;
+            text-align: left;
+            padding-top: 1rem;
+            margin: 0 0 10px 0;
+            font-weight: 900;
+            letter-spacing: 0.2rem;
+        }
+        .ttl-en {
+            font-size: 1.5rem;
+            letter-spacing: 0.5rem;
+        }
+
+        p {
+            font-weight: bold;
+        }
+        .sample-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .sample-item {
+            margin-bottom: 20px;
+
+            img {
+                width: 70%;
+            }
+        }
+        
+    }
+    .price {
+        color: rgb(110, 92, 12);
+        font-weight: bold;
+        text-align: right;
+        font-size: large;
+        letter-spacing: 0.1em;
+        line-height: 0.5;
+    }
+
+}
+hr {
+    size: 1px;
+}
+
+// =============================================
+// Responsive
+// =============================================
+
+/*　スマホランドスケープ　画面サイズが420pxから680pxまではここを読み込む　*/
+@media screen and (min-width: 420px) and (max-width: 600px) {
+    // .bgc-wrapper {
+    //     background-position: right 10% top 40%;
+    //     background-size: 100%;
+
+    //     .process-wrapper {
+    //         height: 1900px;
+    //     }
+
+    //     .news-wrapper {
+    //         height: 600px;
+    //     }
+    // }
+}
+
+/*　タブレット　縦　画面サイズが768pxから1024pxまではここを読み込む　*/
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+    // }
+}
+
+/*　デスクトップ　画面サイズが1001px以上はここを読み込む　*/
+@media screen and (min-width: 1001px) {
+    .works-wrapper .section-wrapper .sample-item {
+        width: 30%;
+        height: 400px;
+        overflow: scroll;
+        transition: all 0.2s ease;
+
+        &:active {
+            overflow: visible;
+            position: fixed;
+            width:500px;
+            top: 15%;
+            right: 30%;
+            left: 30%;
+            bottom: 30%;
+            z-index: 30;
+            
+
+        }
+    }
+
+    .content-width {
+        width:90%;
+
+    }
+
+    .works-wrapper .section-wrapper .sample-item img {
+        width: 90%;
+    }
+    .works-wrapper .section-wrapper .product-icon{
+        width: 35%;
+    }
+
+    .works-wrapper .section-wrapper .sample-container {
+        flex-direction: row;
+
+    }
+}
