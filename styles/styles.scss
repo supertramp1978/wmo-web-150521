@@ -614,10 +614,6 @@ footer {
         width: 80%;
     }
     .bgc-wrapper {
-        // background-position: right 10% top 40%;
-        background-image: url(/images/main_image5S.jpg);
-        background-size: cover;
-        height: auto;
 
         .process-wrapper {
             
@@ -665,10 +661,8 @@ footer {
     .content-width {
         width: 75%;
     }
-    .bgc-wrapper {
-        // background-position: right 10% top 40%;
+    .bgc-wrapper::before {
         background-image: url(/images/main_image5S.jpg);
-        background-size: cover;
 
         .follow-me li {
             transform: translateX(50px);
