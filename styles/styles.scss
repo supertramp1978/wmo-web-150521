@@ -28,12 +28,17 @@ $mt-lg: 100px;
     font-size: large;
     font-weight: bold;
 }
+.char-xl {
+    font-size: x-large;
+    font-weight: bold;
+}
 .char-xxl {
     font-size: xx-large;
     font-weight: bold;
 }
 .char-sm {
     font-size: small;
+    font-weight: bold;
 }
 .char-xsm {
     font-size: x-small;
@@ -54,22 +59,41 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
 // -- =============================================
 //   Back-ground
 // =============================================
 .bgc-wrapper {
-    background-image: url(../images/main_image4_resp.jpg);
-    background-repeat: no-repeat;
-    height: auto;
-    width: 100%;
+    max-width: 100%;
     color: $cWhite;
     background-attachment: fixed;
+    overflow: hidden;
+}
+.bgc-wrapper:before {
+    background-image: url(../images/main_image4_resp.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    /* color: white; */
+    /* background-attachment: fixed; */
     background-position: right 25% top 0%;
     background-size: auto 100%;
-}
+    content: "";
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    }
+
 
 .section-wrapper {
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 // -- =============================================
@@ -209,10 +233,11 @@ header {
 //  =============================================
 .info-wrapper {
     background-color: $cBrown-op;
-    max-width: 95%;
+    max-width: 90%;
     margin: 10px auto;
     opacity: 0;
-    transition: all 5s;
+    transition: all 2s;
+    box-sizing: border-box;
 
     p {
         text-align: center;
@@ -272,6 +297,7 @@ header {
     padding: 1rem 1rem;
     .policy-ttl {
         font-weight: bold;
+        font-size: x-large;
     }
 }
 
@@ -280,7 +306,8 @@ header {
 //  =============================================
 .product-wrapper {
     margin: 0 auto;
-    padding-top: 2rem;
+    box-sizing: border-box;
+    padding: 15% 0 25%;
 
     .bgc-container .s-item .h3-wrapper a {
         color: $cWhite;
@@ -326,6 +353,8 @@ h2 {
     max-width: 100%;
     align-content: space-between;
     margin: 0 auto;
+    box-sizing: border-box;
+
 
     .s-item {
         margin-top: 1rem;
@@ -378,10 +407,10 @@ h2 {
 // =============================================
 
 .process-wrapper {
-    // background-color: red;
-    height: 1300px;
+    height: auto;
     margin: 0 auto;
-    padding-top: 3rem;
+    padding-bottom:40%;
+    box-sizing: border-box;
 
     .m-item {
         height: 90px;
@@ -443,14 +472,13 @@ h2 {
 // =============================================
 
 .news-wrapper {
-    // background-color:blueviolet;
     margin: 0 auto;
     font-weight: bold;
-    padding-bottom: 15%;
+    padding-bottom:25%;
 
     p {
         margin: 0;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .m-item {
@@ -471,17 +499,17 @@ h2 {
 
         .news-item {
             width: 30%;
-            height: 280px;
+            height: 30vh;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 3%;
             border: 2px solid $cWhite;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            // transform-style: preserve-3d;
-            // perspective: 300px;
+            box-sizing: border-box;
+
 
             .news-h3-wrapper {
                 background-color: $cBlack-op;
@@ -490,8 +518,6 @@ h2 {
                 transition: all 0.3s;
 
                 &:hover {
-                    // width: 60%;
-                    // height: 60%;
                     width: 150%;
                     height: 150%;
                 }
@@ -499,7 +525,7 @@ h2 {
 
             .news-h3-wrapper h3 {
                 margin: 20px 0 0;
-                font-size: 0.5rem;
+                font-size: 1rem;
             }
 
             hr {
@@ -507,8 +533,9 @@ h2 {
                 margin: 0 auto;
             }
             .news-icon {
-                width: 80%;
-                margin: 60% 0;
+                width: auto;
+                height: 20%;
+                margin: 40% 0;
             }
         }
     }
@@ -571,7 +598,7 @@ footer {
         background-size: 100%;
 
         .process-wrapper {
-            height: 1900px;
+            padding-bottom: 30%;
         }
 
         .news-wrapper {
@@ -582,6 +609,10 @@ footer {
 
 /*　タブレット　縦　画面サイズが768pxから1024pxまではここを読み込む　*/
 @media screen and (min-width: 601px) and (max-width: 1000px) {
+
+    .content-width {
+        width: 80%;
+    }
     .bgc-wrapper {
         // background-position: right 10% top 40%;
         background-image: url(/images/main_image5S.jpg);
@@ -589,9 +620,7 @@ footer {
         height: auto;
 
         .process-wrapper {
-            height: 1200px;
-            padding-top: 150px;
-
+            
             .pc-flow {
                 display: block;
             }
@@ -615,7 +644,8 @@ footer {
         }
 
         .news-wrapper {
-            height: 600px;
+            height: auto;
+            padding-bottom: 20%;
         }
         .news-wrapper .news-container .news-item .news-icon {
             width: auto;
@@ -631,6 +661,10 @@ footer {
 
 /*　デスクトップ　画面サイズが1001px以上はここを読み込む　*/
 @media screen and (min-width: 1001px) {
+
+    .content-width {
+        width: 75%;
+    }
     .bgc-wrapper {
         // background-position: right 10% top 40%;
         background-image: url(/images/main_image5S.jpg);
@@ -649,9 +683,9 @@ footer {
         }
 
         .info-wrapper {
-            width: 500px;
+            width: 35%;
             height: auto;
-            margin: 10px 5% 10px 50%;
+            margin: 2% 5% 2% 60%;
         }
 
         header nav ul {
@@ -729,7 +763,7 @@ footer {
 
         .policy-ttl {
             font-weight: bold;
-            font-size: large;
+            font-size: x-large;
         }
         .char-xsm {
             font-size: smaller;
