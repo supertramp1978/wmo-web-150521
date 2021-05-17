@@ -95,7 +95,7 @@ body {
   list-style: none;
   margin: 0 0 -8px;
   overflow: hidden;
-  padding: 3px 3px;
+  padding: 10px 10px;
 }
 
 .follow-me li {
@@ -588,9 +588,17 @@ h2 {
   transition: all 0.3s;
 }
 
-.news-wrapper .news-container .news-item .news-h3-wrapper:hover {
-  width: 150%;
-  height: 150%;
+.news-wrapper .news-container .news-item .news-h3-wrapper img {
+  -webkit-transition: -webkit-transform 0.5s linear;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.news-wrapper .news-container .news-item .news-h3-wrapper img:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .news-wrapper .news-container .news-item .news-h3-wrapper h3 {
@@ -610,7 +618,6 @@ h2 {
 }
 
 footer {
-  display: none;
   background-color: black;
   width: 100%;
   height: 260px;
@@ -623,8 +630,12 @@ footer nav ul {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
 }
 
 footer nav ul li {
@@ -659,17 +670,48 @@ footer .footer-logo:hover {
           filter: drop-shadow(0 0 15px white);
 }
 
+#btn-backtotop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  -webkit-transition: bottom 0.2s ease-out;
+  transition: bottom 0.2s ease-out;
+  opacity: 0;
+}
+
+#btn-backtotop img {
+  width: 5rem;
+}
+
+#btn-backtotop.fadein {
+  opacity: 1;
+}
+
+#btn-backtotop:hover {
+  opacity: 0.7;
+}
+
 /*　スマホランドスケープ　画面サイズが420pxから680pxまではここを読み込む　*/
 @media screen and (min-width: 420px) and (max-width: 600px) {
-  .bgc-wrapper {
+  .bgc-wrapper ::before {
     background-position: right 10% top 40%;
     background-size: 100%;
   }
-  .bgc-wrapper .process-wrapper {
+  .bgc-wrapper ::before .process-wrapper {
     padding-bottom: 30%;
   }
-  .bgc-wrapper .news-wrapper {
+  .bgc-wrapper ::before .news-wrapper {
     height: 600px;
+  }
+  #btn-backtotop {
+    bottom: 10px;
+    right: 10px;
+  }
+  #btn-backtotop img {
+    width: 5rem;
   }
 }
 
@@ -678,7 +720,8 @@ footer .footer-logo:hover {
   .content-width {
     width: 80%;
   }
-  .bgc-wrapper {
+  .bgc-wrapper::before {
+    background-position: right 10% top 40%;
     background-image: url(/images/main_image5S.jpg);
     background-size: cover;
     height: auto;
@@ -689,11 +732,6 @@ footer .footer-logo:hover {
   .bgc-wrapper .process-wrapper .sp-flow {
     display: none;
   }
-  .bgc-wrapper .process-wrapper .child1.inview,
-  .bgc-wrapper .process-wrapper .child2.inview,
-  .bgc-wrapper .process-wrapper .child3.inview,
-  .bgc-wrapper .process-wrapper .child4.inview,
-  .bgc-wrapper .process-wrapper .child5.inview,
   .bgc-wrapper .process-wrapper .child6.inview,
   .bgc-wrapper .process-wrapper .child7.inview,
   .bgc-wrapper .process-wrapper .child8.inview,
@@ -713,6 +751,9 @@ footer .footer-logo:hover {
   footer {
     display: block;
   }
+  #btn-backtotop img {
+    width: 7rem;
+  }
 }
 
 /*　デスクトップ　画面サイズが1001px以上はここを読み込む　*/
@@ -720,7 +761,8 @@ footer .footer-logo:hover {
   .content-width {
     width: 75%;
   }
-  .bgc-wrapper {
+  .bgc-wrapper::before {
+    background-position: right 10% top 40%;
     background-image: url(/images/main_image5S.jpg);
     background-size: cover;
   }
@@ -777,9 +819,6 @@ footer .footer-logo:hover {
   }
   .bgc-wrapper .product-wrapper .m-item {
     height: 500px;
-  }
-  .bgc-wrapper .process-wrapper {
-    height: 1800px;
   }
   .bgc-wrapper .process-wrapper .pc-flow {
     display: block;
@@ -855,15 +894,18 @@ footer .footer-logo:hover {
     font-size: 1.5rem;
   }
   .news-wrapper .news-container .news-item {
-    height: 480px;
+    height: 400px;
   }
   .news-wrapper .news-container .news-item .news-icon {
     width: auto;
-    height: 40%;
+    height: 35%;
     margin: 10% 0;
   }
   footer {
     display: block;
+  }
+  #btn-backtotop img {
+    width: 10rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

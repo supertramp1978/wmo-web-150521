@@ -105,7 +105,7 @@ body {
     list-style: none;
     margin: 0 0 -8px;
     overflow: hidden;
-    padding: 3px 3px;
+    padding: 10px 10px;
 }
 .follow-me li {
     float: left;
@@ -516,10 +516,25 @@ h2 {
                 height: 97%;
                 width: 97%;
                 transition: all 0.3s;
+                
+                // &:hover {
+                //     width: 150%;
+                //     height: 150%;
+                // }
 
-                &:hover {
-                    width: 150%;
-                    height: 150%;
+                img {
+                    -moz-transition: -moz-transform 0.5s linear;
+                    -webkit-transition: -webkit-transform 0.5s linear;
+                    -o-transition: -o-transform 0.5s linear;
+                    -ms-transition: -ms-transform 0.5s linear;
+                    transition: transform 0.3s linear;
+                 &:hover {
+                    -webkit-transform: scale(1.5);
+                    -moz-transform: scale(1.5);
+                    -o-transform: scale(1.5);
+                    -ms-transform: scale(1.5);
+                    transform: scale(1.5);
+                    }
                 }
             }
 
@@ -545,7 +560,7 @@ h2 {
 // =============================================
 
 footer {
-    display: none;
+    // display: none;
     background-color: black;
     width: 100%;
     height: 260px;
@@ -554,8 +569,10 @@ footer {
     & nav ul {
         display: flex;
         justify-content: space-around;
-        width: 50%;
+        width: 70%;
         margin: 0 auto;
+        flex-wrap: wrap;
+        transform: translateX(-30px);
 
         li {
             list-style: none;
@@ -587,13 +604,45 @@ footer {
         }
     }
 }
+   // =============================================
+    //     Back to Topボタン
+    // ============================================= 
+
+    #btn-backtotop{
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        transition: all 2s ease-out;
+        transition: bottom 0.2s ease-out;
+        opacity: 0;
+        
+        & img {
+            width: 5rem;
+            }
+        // スクロール時にJSから付与されるクラス
+        &.fadein{
+          opacity: 1;
+        }
+        // ホバー時の挙動
+        &:hover{
+          opacity: 0.7;
+
+        }
+    
+      }
+      
+      
+      
+
+
 // =============================================
 // Responsive
 // =============================================
 
 /*　スマホランドスケープ　画面サイズが420pxから680pxまではここを読み込む　*/
 @media screen and (min-width: 420px) and (max-width: 600px) {
-    .bgc-wrapper {
+    .bgc-wrapper ::before{
         background-position: right 10% top 40%;
         background-size: 100%;
 
@@ -604,7 +653,15 @@ footer {
         .news-wrapper {
             height: 600px;
         }
+
     }
+    #btn-backtotop{
+        & img {
+            width: 5rem;
+            }
+          bottom: 10px;
+          right: 10px;
+      }
 }
 
 /*　タブレット　縦　画面サイズが768pxから1024pxまではここを読み込む　*/
@@ -613,8 +670,13 @@ footer {
     .content-width {
         width: 80%;
     }
+    .bgc-wrapper::before {
+        background-position: right 10% top 40%;
+        background-image: url(/images/main_image5S.jpg);
+        background-size: cover;
+        height: auto;
+    }
     .bgc-wrapper {
-
         .process-wrapper {
             
             .pc-flow {
@@ -623,11 +685,6 @@ footer {
             .sp-flow {
                 display: none;
             }
-            .child1,
-            .child2,
-            .child3,
-            .child4,
-            .child5,
             .child6,
             .child7,
             .child8,
@@ -649,10 +706,17 @@ footer {
             margin: 30% 0;
         }
     }
-
     footer {
         display: block;
     }
+
+    #btn-backtotop{
+        & img {
+            width: 7rem;
+            }
+      }
+
+    
 }
 
 /*　デスクトップ　画面サイズが1001px以上はここを読み込む　*/
@@ -662,8 +726,12 @@ footer {
         width: 75%;
     }
     .bgc-wrapper::before {
+        background-position: right 10% top 40%;
         background-image: url(/images/main_image5S.jpg);
+        background-size: cover;
+    }
 
+    .bgc-wrapper {
         .follow-me li {
             transform: translateX(50px);
             // transform:translateY(50px);
@@ -732,9 +800,6 @@ footer {
             }
         }
         .process-wrapper {
-            height: 1800px;
-            //     padding-top: 150px;
-
             .pc-flow {
                 display: block;
             }
@@ -822,15 +887,25 @@ footer {
     }
 
     .news-wrapper .news-container .news-item {
-        height: 480px;
+        height: 400px;
     }
 
     .news-wrapper .news-container .news-item .news-icon {
         width: auto;
-        height: 40%;
+        height: 35%;
         margin: 10% 0;
     }
     footer {
         display: block;
     }
+
+    #btn-backtotop{
+        & img {
+            width: 10rem;
+            }
+      }
 }
+
+  
+  
+  

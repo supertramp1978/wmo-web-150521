@@ -18,7 +18,8 @@
 }
 
 .prof-wrapper .prof-description.job {
-  font-size: 0.1em;
+  font-size: 0.7em;
+  font-weight: bold;
   width: 90%;
   height: auto;
   position: absolute;
