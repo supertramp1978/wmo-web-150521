@@ -88,8 +88,7 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    }
-
+}
 
 .section-wrapper {
     margin: 0 auto;
@@ -336,7 +335,7 @@ header {
     }
 
     & hr {
-        size: 1px;
+        height: 1px;
         margin: 0;
         width: 60%;
         margin: 0 auto;
@@ -354,7 +353,6 @@ h2 {
     align-content: space-between;
     margin: 0 auto;
     box-sizing: border-box;
-
 
     .s-item {
         margin-top: 1rem;
@@ -396,7 +394,7 @@ h2 {
 
         & hr {
             margin: 0;
-            size: 1px;
+            height: 1px;
             width: 100%;
         }
     }
@@ -409,7 +407,7 @@ h2 {
 .process-wrapper {
     height: auto;
     margin: 0 auto;
-    padding-bottom:40%;
+    padding-bottom: 40%;
     box-sizing: border-box;
 
     .m-item {
@@ -474,7 +472,7 @@ h2 {
 .news-wrapper {
     margin: 0 auto;
     font-weight: bold;
-    padding-bottom:25%;
+    padding-bottom: 25%;
 
     p {
         margin: 0;
@@ -510,13 +508,12 @@ h2 {
             overflow: hidden;
             box-sizing: border-box;
 
-
             .news-h3-wrapper {
                 background-color: $cBlack-op;
                 height: 97%;
                 width: 97%;
                 transition: all 0.3s;
-                
+
                 // &:hover {
                 //     width: 150%;
                 //     height: 150%;
@@ -528,12 +525,12 @@ h2 {
                     -o-transition: -o-transform 0.5s linear;
                     -ms-transition: -ms-transform 0.5s linear;
                     transition: transform 0.3s linear;
-                 &:hover {
-                    -webkit-transform: scale(1.5);
-                    -moz-transform: scale(1.5);
-                    -o-transform: scale(1.5);
-                    -ms-transform: scale(1.5);
-                    transform: scale(1.5);
+                    &:hover {
+                        -webkit-transform: scale(1.5);
+                        -moz-transform: scale(1.5);
+                        -o-transform: scale(1.5);
+                        -ms-transform: scale(1.5);
+                        transform: scale(1.5);
                     }
                 }
             }
@@ -604,37 +601,31 @@ footer {
         }
     }
 }
-   // =============================================
-    //     Back to Topボタン
-    // ============================================= 
+// =============================================
+//     Back to Topボタン
+// =============================================
 
-    #btn-backtotop{
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 1000;
-        transition: all 2s ease-out;
-        transition: bottom 0.2s ease-out;
-        opacity: 0;
-        
-        & img {
-            width: 5rem;
-            }
-        // スクロール時にJSから付与されるクラス
-        &.fadein{
-          opacity: 1;
-        }
-        // ホバー時の挙動
-        &:hover{
-          opacity: 0.7;
+#btn-backtotop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    transition: all 2s ease-out;
+    transition: bottom 0.2s ease-out;
+    opacity: 0;
 
-        }
-    
-      }
-      
-      
-      
-
+    & img {
+        width: 5rem;
+    }
+    // スクロール時にJSから付与されるクラス
+    &.fadein {
+        opacity: 1;
+    }
+    // ホバー時の挙動
+    &:hover {
+        opacity: 0.7;
+    }
+}
 
 // =============================================
 // Responsive
@@ -642,31 +633,32 @@ footer {
 
 /*　スマホランドスケープ　画面サイズが420pxから680pxまではここを読み込む　*/
 @media screen and (min-width: 420px) and (max-width: 600px) {
-    .bgc-wrapper ::before{
+    .bgc-wrapper ::before {
         background-position: right 10% top 40%;
         background-size: 100%;
 
-        .process-wrapper {
+    }
+    .bgc-wrapper {
+        &.process-wrapper {
             padding-bottom: 30%;
         }
-
-        .news-wrapper {
+        &.news-wrapper {
             height: 600px;
         }
-
     }
-    #btn-backtotop{
+
+
+    #btn-backtotop {
         & img {
             width: 5rem;
-            }
-          bottom: 10px;
-          right: 10px;
-      }
+        }
+        bottom: 10px;
+        right: 10px;
+    }
 }
 
 /*　タブレット　縦　画面サイズが768pxから1024pxまではここを読み込む　*/
 @media screen and (min-width: 601px) and (max-width: 1000px) {
-
     .content-width {
         width: 80%;
     }
@@ -678,7 +670,6 @@ footer {
     }
     .bgc-wrapper {
         .process-wrapper {
-            
             .pc-flow {
                 display: block;
             }
@@ -710,18 +701,15 @@ footer {
         display: block;
     }
 
-    #btn-backtotop{
+    #btn-backtotop {
         & img {
             width: 7rem;
-            }
-      }
-
-    
+        }
+    }
 }
 
 /*　デスクトップ　画面サイズが1001px以上はここを読み込む　*/
 @media screen and (min-width: 1001px) {
-
     .content-width {
         width: 75%;
     }
@@ -899,13 +887,9 @@ footer {
         display: block;
     }
 
-    #btn-backtotop{
+    #btn-backtotop {
         & img {
             width: 10rem;
-            }
-      }
+        }
+    }
 }
-
-  
-  
-  

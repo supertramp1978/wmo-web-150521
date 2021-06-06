@@ -365,7 +365,7 @@ header .header-logo:hover {
 }
 
 .m-item hr {
-  size: 1px;
+  height: 1px;
   margin: 0;
   width: 60%;
   margin: 0 auto;
@@ -446,7 +446,7 @@ h2 {
 
 .bgc-container .s-item hr {
   margin: 0;
-  size: 1px;
+  height: 1px;
   width: 100%;
 }
 
@@ -700,10 +700,10 @@ footer .footer-logo:hover {
     background-position: right 10% top 40%;
     background-size: 100%;
   }
-  .bgc-wrapper ::before .process-wrapper {
+  .bgc-wrapper.process-wrapper {
     padding-bottom: 30%;
   }
-  .bgc-wrapper ::before .news-wrapper {
+  .bgc-wrapper.news-wrapper {
     height: 600px;
   }
   #btn-backtotop {

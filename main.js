@@ -2,7 +2,7 @@
 // =============================================
 //    DOM contentLoaded
 // ============================================= 
-const bgiAppear = function(){
+const bgiAppear = function () {
     const bgc = document.querySelector('.fadeIn');
     bgc.style.opacity = '1';
 }
@@ -15,25 +15,16 @@ document.addEventListener('load', bgiAppear());
 //     ページ内スクロール
 // ============================================= 
 
-$(function(){
-    $('nav a').click(function(){
+$(function () {
+    $('nav a').click(function () {
         var id = $(this).attr('href');
         var position = $(id).offset().top;
-        $('html, body').animate({'scrollTop':position}, 500)
+        $('html, body').animate({ 'scrollTop': position }, 500)
     })
 });
 
 
 
-// =============================================
-//    DOMContentLoaded ロゴ回転
-// ============================================= 
-
-// const logo = document.querySelector('.rotate-3d');
-//     document.addEventListener("DOMContentLoaded", function(){
-//     logo.classList.add('rotate');
-
-// });
 // =============================================
 //     スクロール検知 Works
 // ============================================= 
@@ -50,128 +41,33 @@ const child8 = document.querySelector(".child8");
 const child9 = document.querySelector(".child9");
 const child10 = document.querySelector(".child10");
 
-// const cb = function(entries, observer){
-    
-    //     entries.forEach(entry => {
-        //         if(entry.isIntersecting ){
-            //             console.log('inview');
-            //             // entry.target.classList.add('fadeIn');
-            //             observer.unobserve(entry.target)
-            //         } else {
-                //             console.log('out view');
-                //             // entry.target.classList.remove('fadeIn');
-                //         }
-                //     });
-                
-                // }
-                
-                // const options = {
-                    //     root: null,
-                    //     rootMargin: "-300px 0px 0px 0px", 
-                    // };
-                    
-                    
-                    const cb = function(entries, observer) {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('inview');
-                                observer.unobserve(entry.target);
-                            } else {
-                                entry.target.classList.remove('inview');
-                            };
-                        });
-                        
-                        
-                    }
-                    
-            
-                    
-                    // IntersectionObserverをインスタンス化して定数ioに代入
-                    const io = new IntersectionObserver(cb);
-                    
-                    // 監視対象となるDOMを登録
-                    io.observe(child1);
-                    io.observe(child2);
-                    io.observe(child3);
-                    io.observe(child4); 
-                    io.observe(child5);
-                    io.observe(child6);
-                    io.observe(child7);
-                    io.observe(child8);
-                    io.observe(child9); 
-                    io.observe(child10);
 
-// =============================================
-//     スクロール検知　クラス
-// ============================================= 
-
-// =============================================
-//     文字アニメーション
-// ============================================= 
+const cb = function (entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('inview');
+            observer.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('inview');
+        };
+    });
 
 
-// document.addEventListener('DOMContentLoaded', function(){
-//         const el = document.querySelector('.animate-title');
-//         const str = el.innerHTML.trim();
-//         console.log(str);
-//         let concatStr = '';
-//         for(let c of str) {
-//                 concatStr += `<span class="char">${c}</span>`;
-//             }
-//             console.log(concatStr);
-//             el.innerHTML = concatStr;
-//     });
-    
-    // =============================================
-    //     文字アニメーションのクラス化　
-    //        クラス化することで複数の文字列に対してアニメーションを適用できるようにする。　　　
-    // ============================================= 
-    // class TextAnimation {
-        //     constructor(el){
-            //         this.el = document.querySelector('el');
-            //         this.chars = el.innerHTML.trim();
-            //         console.log(chars);
-            
-            //         let concatStr = '';
-            //         for(let c of str) {
-                //             concatStr += `<span class="char">${c}</span>`;
-                //         }
-                //         console.log(concatStr);
-                //         el.innerHTML = concatStr;
-                //     }
-                // }
-                // const ta = new TextAnimation('.animate-title');
+}
 
-// /* ========================================================
-// スクロールでトップに戻るボタンを表示
-// =========================================================*/
-// // スクロールして何ピクセルでアニメーションさせるか
-// var px_change = 200;
-// // スクロールのイベントハンドラを登録
-// window.addEventListener('scroll', function(e) {
-// 	// 変化するポイントまでスクロールしたらクラスを追加
-// 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-// 	if ( scrollTop > px_change ) {
-// 		document.getElementById( "btn-backtotop" ).classList.add( "fadein" );
- 
-// 	// 変化するポイント以前であればクラスを削除
-// 	} else {
-// 		document.getElementById( "btn-backtotop" ).classList.remove( "fadein" );
-// 	}
-// });
- 
-// /* ========================================================
-// トップに戻るボタンのスムーズスクロール
-// =========================================================*/
- 
-// document.getElementById( "btn-backtotop" ).addEventListener('click', function(e) {
-// 	anime.remove("html, body");
-// 	anime({
-// 		targets: "html, body",
-// 		scrollTop: 0,
-// 		dulation: 600,
-// 		easing: 'easeOutCubic',
-// 	});
-// 	return false;
-// });
 
+
+// IntersectionObserverをインスタンス化して定数ioに代入
+const io = new IntersectionObserver(cb);
+
+// 監視対象となるDOMを登録
+io.observe(child1);
+io.observe(child2);
+io.observe(child3);
+io.observe(child4);
+io.observe(child5);
+io.observe(child6);
+io.observe(child7);
+io.observe(child8);
+io.observe(child9);
+io.observe(child10);
