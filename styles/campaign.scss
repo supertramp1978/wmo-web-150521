@@ -1,0 +1,111 @@
+.camp-ttl {
+  background-color: rgb(197, 120, 31);
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  p {
+    margin: 0;
+  }
+}
+.camp-ttl-inner {
+  margin: 0;
+}
+
+.camp-detail-inner {
+  margin: 0;
+}
+.camp-detail {
+  background-color: rgb(235, 141, 17);
+  padding: 1rem;
+  color: white;
+  font-weight: bolder;
+}
+.char-ttl-copy {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 3rem;
+}
+
+td {
+  padding: 10px;
+}
+.price {
+  text-align: right;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.char-sm {
+  font-size: small;
+  padding-bottom: 2rem;
+}
+
+.char-md {
+  font-size: medium;
+}
+.char-lg {
+  font-size: 2rem;
+}
+.camp-img {
+  display: none;
+}
+
+.camp-img-sm {
+  width: 100%;
+  margin: 0 0 15%;
+}
+
+// =============================================
+// Responsive
+// =============================================
+
+/*　スマホランドスケープ　画面サイズが420pxから680pxまではここを読み込む　*/
+@media screen and (min-width: 420px) and (max-width: 600px) {
+}
+
+/*　タブレット　縦　画面サイズが768pxから1024pxまではここを読み込む　*/
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  // .camp-img {
+  //     display: none;
+  // }
+
+  // .camp-img-sm {
+  //     width: 100%;
+  // }
+
+  // .contents-width {
+  //     width: 90%;
+  // }
+}
+// /*　デスクトップ　画面サイズが1001px以上はここを読み込む　*/
+@media screen and (min-width: 1001px) {
+  header {
+    position: fixed;
+    z-index: 20;
+  }
+  .camp-img {
+    display: block;
+    width: 100%;
+    margin: 0 0 10%;
+  }
+
+  .camp-img-sm {
+    display: none;
+  }
+
+  .content-width {
+    width: 85%;
+  }
+  .camp-ttl-inner {
+    margin: 0 25%;
+  }
+  .camp-detail-inner {
+    margin: 0 25%;
+  }
+  .section-wrapper {
+    padding-bottom: 5%;
+  }
+}
