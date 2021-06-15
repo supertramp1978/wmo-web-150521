@@ -128,7 +128,8 @@ body {
     width: 30px; /* Button width */
 }
 
-.follow-me li a[href*="facebook.com"]::before {
+.follow-me li a[href*="https://fb.me/wmodesignoffice"]::before
+{
     border-color: #3b5998;
     background-color: #3b5998;
     content: "\f09a";
@@ -146,7 +147,8 @@ body {
 .follow-me li a:hover::before {
     background-color: #fff;
 }
-.follow-me li a[href*="facebook.com"]:hover::before {
+.follow-me li a[href*="https://fb.me/wmodesignoffice"]:hover::before
+{
     color: #3b5998;
 }
 .follow-me li a[href*="twitter.com"]:hover::before {
