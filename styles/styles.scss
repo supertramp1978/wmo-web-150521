@@ -134,7 +134,8 @@ body {
     background-color: #3b5998;
     content: "\f09a";
 }
-.follow-me li a[href*="twitter.com"]::before {
+.follow-me li a[href*="https://twitter.com/wmo26146841"]::before
+{
     border-color: #55acee;
     background-color: #55acee;
     content: "\f099";
@@ -151,7 +152,8 @@ body {
 {
     color: #3b5998;
 }
-.follow-me li a[href*="twitter.com"]:hover::before {
+.follow-me li a[href*="https://twitter.com/wmo26146841"]:hover::before
+{
     color: #55acee;
 }
 .follow-me li a[href*="youtube.com"]:hover::before {
